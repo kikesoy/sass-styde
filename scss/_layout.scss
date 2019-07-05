@@ -1,0 +1,31 @@
+.container {
+  margin: 0 auto;
+  max-width: 680px;
+  padding: 0 20px;
+  color: $title;
+}
+
+.box {
+  @include box($box-radius, $box-bg, 5rem);
+
+  .head {
+    border-bottom: 1px solid #9bc1bc;
+    padding-bottom: 1em;
+
+    h3 {
+      margin: 0;
+      color: #5ca4a9;
+    }
+  }
+
+  .cont {
+    padding-top: 1rem;
+  }
+}
+
+.selector {
+  padding: 1rem;
+  @include mq-tablet {
+    padding: 5rem;
+  }
+}

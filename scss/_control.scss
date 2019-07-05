@@ -1,0 +1,43 @@
+$if1: 20;
+
+@if $if1 == 20 {
+  .if {
+    width: 20px;
+  }
+} @else {
+  .if {
+    width: 100px;
+  }
+}
+
+$redes: ((facebook, #3b5998), (twitter, #00aced), (gplus, #dd4b39));
+
+// Iteraciones
+
+@each $red, $color in $redes {
+  .btn-#{$red} {
+    @extend %btn;
+    background: {
+      color: $color;
+      image: url("../img/icon#{$red}.png");
+      position: 0.5rem 50%;
+      repeat: no-repeat;
+      size: 20px 20px;
+    }
+  }
+}
+
+@for $i from 1 through 12 {
+  .col#{$i} {
+    margin: 0 1rem;
+    width: (60px * $i);
+  }
+}
+
+$e: 1;
+@while $e < 12 {
+  .pre#{$e} {
+    margin-left: (60px * $e) + (20px * $e);
+  }
+  $e: $e + 1;
+}

@@ -1,0 +1,27 @@
+.btn {
+  @extend %btn;
+  background-color: #5ca4a9;
+
+  &-cta {
+    background-color: #ed6a5a;
+    position: relative;
+    padding-left: 2rem;
+
+    &::before {
+      content: "";
+      display: block;
+      top: 1rem;
+      left: 1rem;
+      position: absolute;
+      border: {
+        width: 0.25rem;
+        style: solid;
+        color: transparent;
+        left-color: white;
+      }
+    }
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+}

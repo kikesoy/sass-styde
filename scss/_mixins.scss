@@ -1,0 +1,21 @@
+$box-bg: #e6ebe0;
+$box-radius: 1rem;
+
+@mixin box($radius, $bg, $space) {
+  padding: ($space / 2);
+  background-color: $bg;
+  border-radius: $radius;
+  margin-bottom: $space;
+  @if lightness($bg) < 50% {
+    color: #fff;
+  }
+  else {
+    color: $text;
+  }
+}
+
+@mixin mq-tablet {
+  @media (min-width: 680px) and (max-width: 1024px) {
+    @content;
+  }
+}

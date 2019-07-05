@@ -1,0 +1,28 @@
+$fvar2: 80px;
+$fcolor2: yellow;
+// Puedo usar colores o variables dentro de RGBA y Sass es suficientemente inteligente para interpretarlo
+$color1: rgba(white, 0.3);
+$color2: rgba($fcolor2, 0.7);
+
+.fsel {
+  width: if($fvar2 < 100px, $fvar2, 100%);
+  background-color: $color1;
+  color: $color2;
+}
+
+// Funciones de introspección: Ayudan a verificar la existencia de variables, mixins o funciones devolviendo TRUE o FALSE
+// variable-exists("fvar2)";
+// function-exists("fvar2");
+// mixin-exists("fvar2");
+
+@function lt($color, $value: 10%) {
+  @return mix(white, $color, $value);
+}
+
+@function dk($color, $value: 10%) {
+  @return mix(black, $color, $value);
+}
+
+.selector-color {
+  color: dk(blue, 50%);
+}

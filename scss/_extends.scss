@@ -1,0 +1,46 @@
+.sel {
+  width: 100px;
+  height: 100px;
+  position: reltive;
+
+  &.big {
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+}
+
+.nuevo {
+  color: blue;
+  @extend .sel;
+}
+
+.otro {
+  @extend .nuevo;
+}
+
+//Placeholder
+%btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  color: white;
+  text: {
+    decoration: none;
+    transform: uppercase;
+  }
+  font-size: 0.8rem;
+  border-radius: 0.25rem;
+}
+
+%selector {
+  display: inline-block;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+.boton {
+  @extend %selector;
+}
+.boton-secundario {
+  @extend %selector;
+  color: red;
+}
